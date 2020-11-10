@@ -11,9 +11,7 @@ export default class Main extends React.Component {
             <div>
                 <Navbar />
                 <p>This is the App area</p>
-                <img src={portalIcon} />
-                <img src={characterIcon} />
-                <img src={doggo} />
+                
             </div>
         )
     }
