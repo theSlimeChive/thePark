@@ -10,7 +10,7 @@ export default class Main extends React.Component {
         return (
             <div>
                 <Navbar />
-                <p>This is the App area</p>
+                <p>Rick and Morty App - the Park</p>
                 
             </div>
         )
