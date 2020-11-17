@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+
 import Navbar from './components/navbar.component';
+import Characters from './components/Characters/characterPage.component'
+import Episodes from './components/Episodes/episodesPage.component'
+import Locations from './components/Locations/locationsPage.component'
 
 const axios = require('axios');
 
@@ -9,27 +14,44 @@ export default class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            characters: []
+            
         }
     }
     componentDidMount() {
-        axios.get('https://rickandmortyapi.com/api/character/')
-        .then(result => {
-            this.setState({
-                characters: result.data.results
-            })
-            console.log(this.state.characters)
-        })
-        .catch(err => console.error(err))
+        
     }
+
+    
 
     render() {
         return (
-            <div>
-                <Navbar />
-                <p>Rick and Morty App - the Park</p>
-                
-            </div>
+            <Router>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to='/'>Characters</Link>
+                        </li>
+                        <li>
+                            <Link to='/episodes'>Episodes</Link>
+                        </li>
+                        <li>
+                            <Link to='/locations'>Locations</Link>
+                        </li>
+                    </ul>
+                </nav>
+
+                <Switch>
+                    <Route exact path="/">
+                        <Characters />
+                    </Route>
+                    <Route path="/episodes">
+                        <Episodes />
+                    </Route>
+                    <Route path="/locations">
+                        <Locations />
+                    </Route>
+                </Switch>
+            </Router>
         )
     }
 }
