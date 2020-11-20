@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Navbar from './components/navbar.component';
+import NavbarComponent from './components/navbar.component';
 import Characters from './components/Characters/characterPage.component'
 import Episodes from './components/Episodes/episodesPage.component'
 import Locations from './components/Locations/locationsPage.component'
+import Home from './components/Home/home.component'
+import { Navbar } from 'react-bootstrap';
 
 const axios = require('axios');
 
@@ -26,22 +29,13 @@ export default class Main extends React.Component {
     render() {
         return (
             <Router>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to='/'>Characters</Link>
-                        </li>
-                        <li>
-                            <Link to='/episodes'>Episodes</Link>
-                        </li>
-                        <li>
-                            <Link to='/locations'>Locations</Link>
-                        </li>
-                    </ul>
-                </nav>
+                <NavbarComponent />
 
                 <Switch>
                     <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route path="/characters">
                         <Characters />
                     </Route>
                     <Route path="/episodes">

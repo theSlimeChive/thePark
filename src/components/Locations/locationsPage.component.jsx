@@ -9,7 +9,7 @@ export default class Locations extends React.Component {
         }
     }
     componentDidMount() {
-        axios.get('https://rickandmortyapi.com/api/episode/')
+        axios.get('https://rickandmortyapi.com/api/location/')
         .then(result => {
             this.setState({
                 locations: result.data.results
