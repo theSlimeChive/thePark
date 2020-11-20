@@ -23,12 +23,11 @@ export default class NavbarComponent extends React.Component {
                             <Link to='/locations'>Locations</Link>
                         </Nav.Link>
                         <Nav.Link>
-                            <Link to='/credit'>Credit</Link>
+                            <Link to='/credits'>Credit</Link>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Navbar>
-            
+            </Navbar> 
         )
     }
 }

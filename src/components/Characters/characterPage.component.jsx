@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 
+import { ListGroup, Jumbotron, Container } from 'react-bootstrap'
+
 export default class Characters extends React.Component {
     constructor(props) {
         super(props);
@@ -19,11 +21,20 @@ export default class Characters extends React.Component {
     }
     render() {
         return(
-               <ul>
-                   {this.state.characters.map(character => {
-                       return <li key={character.id}>{character.name}</li>
-                   })}
-               </ul>
+               <>
+                    <Jumbotron>
+                        <h2>Welcome to the Characters Page</h2>
+                    </Jumbotron>
+
+                    <Container>
+                        <ListGroup>
+                            {this.state.characters.map(character => {
+                                return <ListGroup.Item key={character.id}>{character.name}</ListGroup.Item>
+                            })}
+                        </ListGroup> 
+                    </Container> 
+                    
+               </>
         )
     }
 }
