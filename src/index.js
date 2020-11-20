@@ -8,7 +8,8 @@ import Characters from './components/Characters/characterPage.component'
 import Episodes from './components/Episodes/episodesPage.component'
 import Locations from './components/Locations/locationsPage.component'
 import Home from './components/Home/home.component'
-import { Navbar } from 'react-bootstrap';
+import Credits from './components/Credits/credits.component'
+
 
 const axios = require('axios');
 
@@ -20,9 +21,7 @@ export default class Main extends React.Component {
             
         }
     }
-    componentDidMount() {
-        
-    }
+    
 
     
 
@@ -30,7 +29,6 @@ export default class Main extends React.Component {
         return (
             <Router>
                 <NavbarComponent />
-
                 <Switch>
                     <Route exact path="/">
                         <Home />
@@ -44,10 +42,12 @@ export default class Main extends React.Component {
                     <Route path="/locations">
                         <Locations />
                     </Route>
+                    <Route path="/credits">
+                        <Credits />
+                    </Route>
                 </Switch>
             </Router>
         )
     }
 }
-
 ReactDOM.render(<Main />, document.getElementById('root'));

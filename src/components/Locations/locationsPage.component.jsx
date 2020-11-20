@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { ListGroup, Jumbotron, Container } from 'react-bootstrap'
 
 export default class Locations extends React.Component {
     constructor(props) {
@@ -19,11 +20,22 @@ export default class Locations extends React.Component {
     }
     render() {
         return(
-               <ul>
-                   {this.state.locations.map(episode => {
-                       return <li key={episode.id}>{episode.name}</li>
-                   })}
-               </ul>
+
+            <>
+                    <Jumbotron>
+                        <h2>Welcome to the Locations Page</h2>
+                    </Jumbotron>
+
+                    <Container>
+                        <ListGroup>
+                            {this.state.locations.map(location => {
+                                return <ListGroup.Item key={location.id}>{location.name}</ListGroup.Item>
+                            })}
+                        </ListGroup> 
+                    </Container> 
+                    
+            </>
+               
         )
     }
 }
