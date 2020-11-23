@@ -21,9 +21,7 @@ export default class Episodes extends React.Component {
     render() {
         return(
             <>
-                    <Jumbotron>
-                        <h2>Welcome to the Episodes Page</h2>
-                    </Jumbotron>
+                    
 
                     <Container>
                         <ListGroup>

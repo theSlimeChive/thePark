@@ -22,10 +22,6 @@ export default class Characters extends React.Component {
     render() {
         return(
                <>
-                    <Jumbotron>
-                        <h2>Welcome to the Characters Page</h2>
-                    </Jumbotron>
-
                     <Container>
                         <ListGroup>
                             {this.state.characters.map(character => {

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import NavbarComponent from './components/navbar.component';
+import NavbarComponent from './components/Navbar/navbar.component'
 import Characters from './components/Characters/characterPage.component'
 import Episodes from './components/Episodes/episodesPage.component'
 import Locations from './components/Locations/locationsPage.component'
