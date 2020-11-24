@@ -1,46 +1,62 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { Navbar, Nav , Jumbotron, Container } from 'react-bootstrap'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components';
+import './_fonts.scss'
 
+const theme = {
+    _bar: '#39971C',
+    font: 'Roboto'
+}
 const Title = styled.h1`
-  font-size: 2.5em;
-  text-align: center;
-  color: red;
+    color: ${theme._bar};
+    font-family: ${theme.font};
 `;
-export default class NavbarComponent extends React.Component {
+
+const StyledJumbo = styled(Jumbotron)`
+    background-color: white;
+`;
+
+const StyledLink = styled(Link)`
+    color: black;
     
+    
+`;
+
+const StyledBrand = styled(Navbar.Brand)`
+    font-weight: 700;
+`;
+
+
+export default class NavbarComponent extends React.Component {
     
     render() {
         return (
-            <Jumbotron bg='light'> 
-                <Navbar expand='lg' fixed='top'>
-                    <Container>
-                        <Navbar.Brand>
-                            <Link to='/'>the Park</Link>
-                        </Navbar.Brand>
-                        <Navbar.Toggle aria-controls='main-nav' />
-                        <Navbar.Collapse id='main-nav'>
-                            <Nav className='ml-auto'>
-                                <Nav.Link>
-                                    <Link to='/characters'>Characters</Link>
-                                </Nav.Link>
-                                <Nav.Link>
-                                    <Link to='/locations'>Locations</Link>
-                                </Nav.Link>
-                            </Nav>
-                        </Navbar.Collapse>
+                <StyledJumbo> 
+                    <Navbar expand='lg' bg="white" fixed='top'>
+                        <Container>
+                            <StyledBrand>
+                                <StyledLink to='/'>the Park</StyledLink>
+                            </StyledBrand>
+                            <Navbar.Toggle aria-controls='main-nav' />
+                            <Navbar.Collapse id='main-nav'>
+                                <Nav className='ml-auto'>
+                                    <Nav.Link>
+                                        <StyledLink to='/characters'>Characters</StyledLink>
+                                    </Nav.Link>
+                                    <Nav.Link>
+                                        <StyledLink to='/locations'>Locations</StyledLink>
+                                    </Nav.Link>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Container>
+                    </Navbar>
+                    <Container className='py-5 text-center'>
+                        <Title>
+                            A COLLECTION OF RICK AND MORTY 
+                        </Title>
                     </Container>
-                </Navbar> 
-
-
-                <Container className='py-5 text-center'>
-                    <Title>
-                        A COLLECTION 
-                    </Title>
-                </Container>
-            </Jumbotron>
-            
+                </StyledJumbo>
         )
     }
 }
