@@ -27,9 +27,6 @@ export default class Main extends React.Component {
                 <NavbarComponent />
                 <Switch>
                     <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/characters">
                         <Characters />
                     </Route>
                     <Route path="/episodes">

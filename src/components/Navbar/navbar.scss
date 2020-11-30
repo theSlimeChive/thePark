@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro&display=swap');
+
+
+// Navbar Styles
+#nav-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+#n-item {
+    padding: 0px 2.2rem;
+    font-weight: 500
+}
+a {
+    color: black;
+    text-transform: uppercase;
+
+}
+.jumbotron {
+    background: url('../../public/images/edite2e.png') no-repeat center;
+    min-height: 50vh;
+}
+
+//Hero Styles
