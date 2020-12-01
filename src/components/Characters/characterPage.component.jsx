@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import { ListGroup, Jumbotron, Container, Card, CardColumns } from 'react-bootstrap'
 import './characters.scss'
+import '../../baseStyles/base.scss'
 
 export default class Characters extends React.Component {
     constructor(props) {
@@ -22,13 +23,13 @@ export default class Characters extends React.Component {
     }
     render() {
         return(
-               <>
-                    <Container fluid>
-                        <h3 className="page-title py-2">Characters:</h3>
-                        <CardColumns>
+            <>
+                <Container fluid className="mb-2">
+                    <h3 className="page-title py-2">Characters:</h3>
+                    <CardColumns>
                         {this.state.characters.map(character => {
                             return (
-                                <Card>
+                                <Card className="shadow">
                                     <div className="row no-gutters">
                                         <div className="col-lg ">
                                             <img src={character.image} alt={character.name} className="rounded img-fluid w-100" id="characterImg"/>
@@ -40,18 +41,14 @@ export default class Characters extends React.Component {
                                                 <Card.Text>Location: {character.location.name}</Card.Text>
                                                 <Card.Text># of Episodes: {character.episode.length}</Card.Text>
                                             </Card.Body>
-                                        </div>
-                                        
-                                    </div>
-        
-                                    
+                                        </div>       
+                                    </div>     
                                 </Card>
                             )
                         })}
-                        </CardColumns>
-                    </Container> 
-                    
-               </>
+                    </CardColumns>
+                </Container> 
+            </>
         )
     }
 }
