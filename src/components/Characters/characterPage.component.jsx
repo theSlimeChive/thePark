@@ -24,7 +24,7 @@ export default class Characters extends React.Component {
         return(
                <>
                     <Container fluid>
-                        <h3 className="page-title">Characters:</h3>
+                        <h3 className="page-title py-2">Characters:</h3>
                         <CardColumns>
                         {this.state.characters.map(character => {
                             return (
