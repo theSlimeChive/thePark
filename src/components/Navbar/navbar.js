@@ -8,12 +8,6 @@ window.onscroll = function(){
     }
 
     if (top < 99) {
-        this.document.getElementById('scrollable').style.backgroundColor = "blanchedalmond"
+        this.document.getElementById('scrollable').style.backgroundColor = "#f9b798"
     }
-
-    /*if (top == 0) {
-        document.getElementById('scrollable').classList.add('bg-transparent');
-    } else {
-        document.getElementById('scrollable').classList.add('bg-white')
-    }*/
 } 
