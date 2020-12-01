@@ -16,7 +16,7 @@ export default class NavbarComponent extends React.Component {
                 
                 <Jumbotron> 
                     
-                    <Navbar expand='lg' variant="white" fixed='top' id="scrollable" >
+                    <Navbar expand='lg'  fixed='top' id="scrollable">
                         <Container>
                             <Navbar.Brand id="nav-title">
                                 <Link to='/'>the Park</Link>
@@ -35,8 +35,8 @@ export default class NavbarComponent extends React.Component {
                         </Container>
                     </Navbar>
                     <Container className='py-5 text-center'>
-                        <h2 id="hero-text">A COLLECTION OF RICK AND MORTY</h2>
-                        <div id="bar"></div>
+                        <h2 className="display-4" id="hero-text">A COLLECTION OF RICK AND MORTY</h2>
+                        <p>Browse to see some quick facts and stats from R&M!</p>
                     </Container>
                 </Jumbotron>
         )
