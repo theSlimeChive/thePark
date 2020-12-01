@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import { ListGroup, Jumbotron, Container } from 'react-bootstrap'
+import { ListGroup, Jumbotron, Container, Card, CardColumns } from 'react-bootstrap'
+import './locations.scss'
 
 export default class Locations extends React.Component {
     constructor(props) {
@@ -22,16 +23,32 @@ export default class Locations extends React.Component {
         return(
 
             <>
-                    <Jumbotron>
-                        <h2>Welcome to the Locations Page</h2>
-                    </Jumbotron>
-
-                    <Container>
-                        <ListGroup>
+                    <Container fluid>
+                        <h3 className="page-title">Locations: </h3>
+                        <CardColumns>
                             {this.state.locations.map(location => {
-                                return <ListGroup.Item key={location.id}>{location.name}</ListGroup.Item>
+                                return (
+                                    <Card border="warning">
+                                        <Card.Header>
+                                            <Card.Title>{location.name}</Card.Title>
+                                            <Card.Subtitle className="text-muted">{location.type}</Card.Subtitle>
+                                        </Card.Header>
+                                        <Card.Body bg="red">
+                                            <div className="row text-center">
+                                                <div className="col py-2">
+                                                    <Card.Text className="subtitled">Dimension:</Card.Text>
+                                                    <Card.Text>{location.dimension}</Card.Text>
+                                                </div>
+                                                <div className="col py-2">
+                                                    <Card.Text className="subtitled">Resident Count:</Card.Text>
+                                                    <Card.Text>{location.residents.length}</Card.Text>
+                                                </div>
+                                            </div>
+                                        </Card.Body>
+                                    </Card>
+                                )
                             })}
-                        </ListGroup> 
+                        </CardColumns>
                     </Container> 
                     
             </>
