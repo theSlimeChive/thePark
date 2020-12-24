@@ -8,7 +8,7 @@ I created a frontend for the Rick and Morty API. I wanted more experience design
 With that this wonderful piece came about. 
 
 ## Technologies Used:
-React, React-Router-DOM, React-Bootstrap, Axios, SASS, and Figma. 
+React, React-Router-DOM, React-Bootstrap, Axios, SASS, and Figma. [Figma File]https://github.com/knottyChive/thePark
 Deployed on Netlify!
 
 ## How it went:
